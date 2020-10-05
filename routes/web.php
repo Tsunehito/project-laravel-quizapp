@@ -11,10 +11,15 @@
 |
 */
 
+use App\Quiz;
+
 Route::get('/', function () {
-    return view('admin.index');
+    $quizzes =(new Quiz)->allQuiz();
+    return view('admin.index', compact('quizzes'));
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('quiz', 'QuizController');
