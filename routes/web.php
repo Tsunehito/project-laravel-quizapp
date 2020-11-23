@@ -24,4 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('quiz', 'QuizController');
 Route::resource('question', 'QuestionController');
+Route::resource('user', 'UserController');
+
 Route::get('/quiz/{id}/questions', 'QuizController@question')->name('quiz.question');
